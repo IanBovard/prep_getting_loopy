@@ -139,13 +139,12 @@ function nap(schedule){
 		console.log("Gotta get to work!");
 		isNapTime = true;
 	}
-	for (var i=0; i<schedule.length; i++){
-		nap(napSchedule[i]);
+
 
 	}
-	return schedule
+	for (var i=0; i<napSchedule.length; i++){
+		nap(napSchedule[i]);
 }
-console.log(nap(napSchedule));
 /*Declare a variable named `valuesArray` and set it's value to be an array, `[99, 66, 829, 1941, 8, 76]`.
 
 Declare a function named `copyArray` which takes two arguments: `originArray` and `destinationArray`. Inside of this function you will loop through the contents of `originArray` and push each value into `destinationArray`.
@@ -167,7 +166,7 @@ Declare a function named `generateArrayOfStrings` which takes a single argument 
 It's that time again, we need to graduate the current class of students and start enrollment for the next class.
 
 Declare a variable named `currentClass` and set it's value to be this [array found here](https://gist.github.com/sgnl/e40879b2249e06ca7811).
-
+
 Declare a function named `graduateAndSetNewClass`, it takes a single argument called `class`.
 
 Your function will iterate through the `class` argument and check each student's `enrolled` property.
