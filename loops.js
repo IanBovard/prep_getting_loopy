@@ -143,6 +143,7 @@ function nap(schedule){
 		nap(napSchedule[i]);
 
 	}
+	return schedule
 }
 console.log(nap(napSchedule));
 /*Declare a variable named `valuesArray` and set it's value to be an array, `[99, 66, 829, 1941, 8, 76]`.
@@ -174,3 +175,17 @@ Your function will iterate through the `class` argument and check each student's
 If the `enrolled` property is set to `true` then change that student's `graduated` property to `true`. Otherwise, if `enrolled` is set to `false` then change `enrolled` to `true` leaving `graduated` alone and unchanged.
 */
 
+var miscStorage = [ [], "Carrots", 9, "Beets", {}, {name: "Todd B."}, "Mush"];
+	var newStorage = [];
+function generateArrayOfStrings(storage){
+
+	for (var i=0; i<storage.length; i++){
+		if (typeof storage[i] === typeof "string"){
+			newStorage.push(storage[i]);
+
+		}
+
+	}
+			return newStorage;
+}
+console.log(generateArrayOfStrings(miscStorage));
