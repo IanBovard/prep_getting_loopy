@@ -39,7 +39,7 @@ printContent(presidents);
 
 var stringOfNumbers = "";
 
-for (i=10; i<=20; i++){
+for (var i=10; i<=20; i++){
 	console.log("Value of index is: " + i);
 }
 
@@ -56,7 +56,7 @@ Declare a variable named `evenNumberArray`.
 Use a _FOR_ loop to add only even numbers to an Array. Add `50` even numbers to the `evenNumberArray` starting with the value `0`.*/
 
  var evenNumberArray = [];
- for (i=0; i<=99; i++){
+ for (var i=0; i<=99; i++){
  	if (i%2 === 0){
  		evenNumberArray.push(i);
  	}
@@ -66,7 +66,7 @@ Use a _FOR_ loop to add only even numbers to an Array. Add `50` even numbers to 
 console.log(evenNumberArray);
 
 function evenSums(abstractionOfPhysicalMagnetudes){
-	for (i=0; i<=99; i++){
+	for (var i=0; i<=99; i++){
 		if (abstractionOfPhysicalMagnetudes[i]%2 === 0){
 			abstractionOfPhysicalMagnetudes.push(i);
 	}
@@ -87,11 +87,11 @@ Example result should look like:
 ```javascript
 `[ 'turn' , 'nope' , 'down' , 'nope' , 'for' , 'nope' , 'what' ]`*/
 
-var oopsArray = ["turn", "down", "pho", "what"];
+var oopsArray = ["turn", "" ,"down", "" ,"pho", "" ,"what"];
 
-for (i=0; i<oopsArray.length; i++){
-	if (i%2 !== 0){
-		oopsArray.push("nope");
+for (var i=0; i<oopsArray.length; i++){
+	if (i%2 === 1){
+		oopsArray[i] = "nope";
 	}
 }
 console.log(oopsArray);
@@ -110,6 +110,10 @@ nope
 turn
 ```*/
 
+for (var i=oopsArray.length - 1; i>=0; i--){
+console.log(oopsArray[i]);
+}
+
 
 
 
@@ -125,9 +129,22 @@ Declare a function named `nap`. This function takes in a single parameter called
 
 Now, Write a FOR loop that iterates through the `napSchedule` array and runs the function `nap` while passing in the value at the current position of `napSchedule` into the `nap` function.*/
 
+var isNapTime = false;
+var napSchedule = [false, false, true, false, true, true];
 
+function nap(schedule){
+	if (schedule === true){
+		console.log("ZzZzZzZz");
+	}else{
+		console.log("Gotta get to work!");
+		isNapTime = true;
+	}
+	for (var i=0; i<schedule.length; i++){
+		nap(napSchedule[i]);
 
-
+	}
+}
+console.log(nap(napSchedule));
 /*Declare a variable named `valuesArray` and set it's value to be an array, `[99, 66, 829, 1941, 8, 76]`.
 
 Declare a function named `copyArray` which takes two arguments: `originArray` and `destinationArray`. Inside of this function you will loop through the contents of `originArray` and push each value into `destinationArray`.
